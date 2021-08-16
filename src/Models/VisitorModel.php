@@ -6,6 +6,7 @@ class VisitorModel
 {
     private $db;
 
+
     /**
      * @param $db
      */
@@ -28,6 +29,15 @@ class VisitorModel
 
         );
         return $query->execute();
+    }
+
+    public function getVisitors()
+    {
+        $query = $this->db->prepare(
+            "SELECT `name`, `company`, `entry_time` FROM `visitors`"
+        );
+        $query->execute();
+        return $query->fetchAll();
     }
 
 

@@ -1,0 +1,20 @@
+body {
+    background-image: url("/background.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.container {
+    margin: 3%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    border-top: grey solid 2px;
+}
+

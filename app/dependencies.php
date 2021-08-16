@@ -33,7 +33,7 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
-    $container['dbConnection'] = function (ContainerInterface $c) {
+    $container['db'] = function (ContainerInterface $c) {
         $settings = $c->get('settings')['db'];
         $db = new PDO($settings['host'] . $settings['dbName'], $settings['userName'], $settings['password']);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
@@ -41,9 +41,10 @@ return function (ContainerBuilder $containerBuilder) {
         return $db;
     };
 
-    $container['HomePageController'] = DI\factory('\App\Factories\Controllers\HomePageControllerFactory');
-    $container['AddVisitorController'] = DI\factory('\App\Factories\Controllers\AddVisitorControllerFactory');
-    $container['AdminPageController'] = DI\factory('\App\Factories\Controllers\AdminPageControllerFactory');
+    $container['HomePageController'] = DI\factory(\App\Factories\Controllers\HomePageControllerFactory::class);
+    $container['AddVisitorController'] = DI\factory(\App\Factories\Controllers\AddVisitorControllerFactory::class);
+    $container['AdminPageController'] = DI\factory(\App\Factories\Controllers\AdminPageControllerFactory::class);
+    $container['VisitorModel'] = DI\factory(\App\Factories\Models\VisitorModelFactory::class);
 
     $containerBuilder->addDefinitions($container);
 };

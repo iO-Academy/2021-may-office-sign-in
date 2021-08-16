@@ -41,5 +41,7 @@ return function (ContainerBuilder $containerBuilder) {
         return $db;
     };
 
+    $container['HomePageController'] = DI\factory('\App\Factories\Controllers\HomePageControllerFactory');
+
     $containerBuilder->addDefinitions($container);
 };

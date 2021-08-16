@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.34)
 # Database: BonjoursDB
-# Generation Time: 2021-08-16 10:42:07 +0000
+# Generation Time: 2021-08-16 13:14:00 +0000
 # ************************************************************
 
 
@@ -21,25 +21,25 @@ SET NAMES utf8mb4;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table admins
+# Dump of table admin
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `admins`;
+DROP TABLE IF EXISTS `admin`;
 
-CREATE TABLE `admins` (
+CREATE TABLE `admin` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `passcode` int(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-LOCK TABLES `admins` WRITE;
-/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 
-INSERT INTO `admins` (`id`, `passcode`)
+INSERT INTO `admin` (`id`, `passcode`)
 VALUES
 	(1,1111);
 
-/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -51,28 +51,28 @@ DROP TABLE IF EXISTS `visitors`;
 CREATE TABLE `visitors` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '',
-  `surname` varchar(50) NOT NULL DEFAULT '',
   `email` varchar(254) NOT NULL DEFAULT '',
   `company` varchar(120) DEFAULT NULL,
   `entry_time` int(11) NOT NULL,
+  `is_in` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `visitors` WRITE;
 /*!40000 ALTER TABLE `visitors` DISABLE KEYS */;
 
-INSERT INTO `visitors` (`id`, `name`, `surname`, `email`, `company`, `entry_time`)
+INSERT INTO `visitors` (`id`, `name`, `email`, `company`, `entry_time`, `is_in`)
 VALUES
-	(1,'Lucy','Ferrabee','lucy.test@hotmail.com','Microsoft',1629109360),
-	(2,'Fred','Perry','fred123@gmail.com','Just Eat',1629109480),
-	(3,'Sonia','Larson','larry@hotmail.com',NULL,1629109200),
-	(4,'Benedict','Cumberbatch','benten@uber.com','Uber',1629109670),
-	(5,'Penny','Lane','penny@lane.com','Lane Services Ltd.',1629109100),
-	(6,'Michael','Michaelson','mkay@me.com',NULL,1629109381),
-	(7,'Jonny','Begood','birdwatcher5376@gousto.com','Gousto',1629109427),
-	(8,'Samuel','Smith','smithy@gmail.com',NULL,1629110400),
-	(9,'Janet','Jackson','plainjane1999@hotmail.com',NULL,1629115000),
-	(10,'Sally','Silly','sal@gmail.com','Silly Sally Ltd.',1629109361);
+	(1,'Lucy Ferrabee','lucy.test@hotmail.com','Microsoft',1629109360,1),
+	(2,'Fred Perry','fred123@gmail.com','Just Eat',1629109480,1),
+	(3,'Sonia Larson','larry@hotmail.com',NULL,1629109200,0),
+	(4,'Benedict Cumberbatch','benten@uber.com','Uber',1629109670,1),
+	(5,'Penny Lane','penny@lane.com','Lane Services Ltd.',1629109100,0),
+	(6,'Michael Michaelson','mkay@me.com',NULL,1629109381,0),
+	(7,'Jonny Begood','birdwatcher5376@gousto.com','Gousto',1629109427,1),
+	(8,'Samuel Smith','smithy@gmail.com',NULL,1629110400,1),
+	(9,'Janet Jackson','plainjane1999@hotmail.com',NULL,1629115000,0),
+	(10,'Sally Silly','sal@gmail.com','Silly Sally Ltd.',1629109361,1);
 
 /*!40000 ALTER TABLE `visitors` ENABLE KEYS */;
 UNLOCK TABLES;

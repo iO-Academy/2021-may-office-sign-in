@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.34)
 # Database: BonjoursDB
-# Generation Time: 2021-08-16 10:25:12 +0000
+# Generation Time: 2021-08-16 10:42:07 +0000
 # ************************************************************
 
 
@@ -28,9 +28,6 @@ DROP TABLE IF EXISTS `admins`;
 
 CREATE TABLE `admins` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '',
-  `surname` varchar(50) NOT NULL DEFAULT '',
-  `email` varchar(254) NOT NULL DEFAULT '',
   `passcode` int(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,18 +35,9 @@ CREATE TABLE `admins` (
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
 
-INSERT INTO `admins` (`id`, `name`, `surname`, `email`, `passcode`)
+INSERT INTO `admins` (`id`, `passcode`)
 VALUES
-	(1,'Monica','Bronica','monnybronny@bonjours.com',1111),
-	(2,'Bradley','Shmadley','bradders@bonjours.com',1111),
-	(3,'Sarah','Pallbearer','sassyk@bonjours.com',1111),
-	(4,'Ali','Pally','ali@bonjours.com',1111),
-	(5,'Jesus','Shmesus','jessyj@bonjours.com',1111),
-	(6,'David','Jones','david@bonjours.com',1111),
-	(7,'Betty','Spaghetti','bdog@bonjours.com',1111),
-	(8,'Bill','Bill','billsbillsbills@bonjours.com',1111),
-	(9,'Mike','Oram','mike@bonjours.com',1111),
-	(10,'Sandy','Dandy','dandy@bonjours.com',1111);
+	(1,1111);
 
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;

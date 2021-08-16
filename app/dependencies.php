@@ -33,5 +33,13 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['dbConnection'] = function (ContainerInterface $c) {
+        $settings = $c->get('settings')['db'];
+        $db = new PDO($settings['host'] . $settings['dbName'], $settings['userName'], $settings['password']);
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // uncomment to debug DB errors
+        return $db;
+    };
+
     $containerBuilder->addDefinitions($container);
 };

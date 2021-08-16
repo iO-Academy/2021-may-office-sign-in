@@ -26,8 +26,8 @@
     </style>
 </head>
 <body>
-<h1>Slim</h1>
-<div>a microframework for PHP</div>
+<h1>OFFICE </h1>
+<div>It WORKS!</div>
     <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
 </body>
 </html>

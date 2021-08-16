@@ -21,6 +21,6 @@ class AddVisitorController extends Controller
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        return $response->withHeader('Location', './');
+        return $this->renderer->render($response, 'newVisitor.phtml', $args);
     }
 }

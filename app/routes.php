@@ -7,8 +7,7 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 return function (App $app) {
 
     $app->get('/', 'HomePageController');
-    $app->get('/newVisitor', 'AddVisitorPageController');
-    $app->get('/login', 'AdminLogInPageController');
+    $app->get('/newVisitor', 'AddVisitorController');
     $app->get('/admin', 'AdminPageController');
 //    $container = $app->getContainer();
 //

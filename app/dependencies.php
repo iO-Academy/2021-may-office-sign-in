@@ -42,6 +42,8 @@ return function (ContainerBuilder $containerBuilder) {
     };
 
     $container['HomePageController'] = DI\factory('\App\Factories\Controllers\HomePageControllerFactory');
+    $container['AddVisitorController'] = DI\factory('\App\Factories\Controllers\AddVisitorControllerFactory');
+    $container['AdminPageController'] = DI\factory('\App\Factories\Controllers\AdminPageControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };

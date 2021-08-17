@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <?php require 'partials/layout/head.phtml'; ?>
-    </head>
-    <body>
-    <?php require 'partials/layout/header.phtml'; ?>
-    <div class="title">
-        <h2>Visitor Form</h2>
+
+<head>
+    <?php require 'partials/layout/head.phtml'; ?>
+</head>
+<body>
+<?php require 'partials/layout/header.phtml'; ?>
+<main class="admin_page">
+    <div>
+        <button>CLICK ME!</button>
     </div>
-    <div class="form-container">
+
+
+
+    <div>
+        <table>
+        <tr>
+            <th>NAME:</th>
+            <th>COMPANY:</th>
+            <th>DAY/TIME ENTERED:</th>
+            <th>CURRENTLY IN:</th>
+            <?php echo \App\ViewHelpers\DisplayVisitorsViewHelper::displayVisitors($visitors); ?>
+        </tr>
+
+
+        </table>
     </div>
-    <?php require 'partials/layout/footer.phtml'; ?>
-    </body>
+</main>
+
+<?php require 'partials/layout/footer.phtml'; ?>
+</body>
+
+<!--    <head>-->
+<!--        --><?php //require 'partials/layout/head.phtml'; ?>
+<!--    </head>-->
+<!--    <body>-->
+<!--    --><?php //require 'partials/layout/header.phtml'; ?>
+<!--    <div class="title">-->
+<!--        <h2>Visitor Form</h2>-->
+<!--    </div>-->
+<!--    <div class="form-container">-->
+<!--    </div>-->
+<!--    --><?php //require 'partials/layout/footer.phtml'; ?>
+<!--    </body>-->
+
 </html>

@@ -46,6 +46,7 @@ return function (ContainerBuilder $containerBuilder) {
     $container['AddVisitorController'] = DI\factory(\App\Factories\Controllers\AddVisitorControllerFactory::class);
     $container['AdminPageController'] = DI\factory(\App\Factories\Controllers\AdminPageControllerFactory::class);
     $container['VisitorModel'] = DI\factory(\App\Factories\Models\VisitorModelFactory::class);
+    $container['AddVisitorFormController'] = DI\factory(\App\Factories\Controllers\AddVisitorFormControllerFactory::class);
 
 
     $containerBuilder->addDefinitions($container);

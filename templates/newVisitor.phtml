@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php require 'partials/layout/head.phtml'; ?>
-</head>
-<body>
-<?php require 'partials/layout/header.phtml'; ?>
-
-
-
-<?php require 'partials/layout/footer.phtml'; ?>
-</body>
+    <head>
+        <?php require 'partials/layout/head.phtml'; ?>
+    </head>
+    <body>
+        <?php require 'partials/layout/header.phtml'; ?>
+        <div class="title">
+            <h2>Visitor Form</h2>
+        </div>
+        <div class="form-container">
+            <form method="post" action="/newVisitor">
+                <label for="name" >Name</label>
+                <input id="name" name="name" type="text">
+                <label for="company" >Company <span>(Optional)</span></label>
+                <input id="company" name="company" type="text">
+                <div class="btn-container">
+                    <button class="btn btn-back" type="button" value="Back">Back</button>
+                    <button class="btn btn-submit" type="submit" value="Submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <?php require 'partials/layout/footer.phtml'; ?>
+    </body>
 </html>

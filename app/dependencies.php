@@ -41,9 +41,16 @@ return function (ContainerBuilder $containerBuilder) {
         return $db;
     };
 
-    $container['HomePageController'] = DI\factory('\App\Factories\Controllers\HomePageControllerFactory');
-    $container['AddVisitorController'] = DI\factory('\App\Factories\Controllers\AddVisitorControllerFactory');
-    $container['AdminPageController'] = DI\factory('\App\Factories\Controllers\AdminPageControllerFactory');
+    $container['VisitorModel'] =
+        DI\factory(\App\Factories\Model\VisitorModelFactory::class);
+    $container['HomePageController'] =
+        DI\factory('\App\Factories\Controllers\HomePageControllerFactory');
+    $container['AddVisitorController'] =
+        DI\factory('\App\Factories\Controllers\AddVisitorControllerFactory');
+    $container['AdminPageController'] =
+        DI\factory('\App\Factories\Controllers\AdminPageControllerFactory');
+    $container['AddVisitorFormController'] =
+        DI\factory('\App\Factories\Controllers\AddVisitorFormControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };

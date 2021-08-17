@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php require 'partials/layout/head.phtml'; ?>
 </head>
 <body>
 <?php require 'partials/layout/header.phtml'; ?>
+<main class="admin_page">
+    <div>
+        <button>LOG OUT</button>
+    </div>
+
+    <div>
+        <table>
+        <tr>
+            <th>NAME:</th>
+            <th>COMPANY:</th>
+            <th>DAY/TIME ENTERED:</th>
+            <th>CURRENTLY IN:</th>
+            <?php echo \App\ViewHelpers\DisplayVisitorsViewHelper::displayVisitors($visitors); ?>
+        </tr>
 
 
+        </table>
+    </div>
+</main>
 
 <?php require 'partials/layout/footer.phtml'; ?>
 </body>
+
+
 </html>

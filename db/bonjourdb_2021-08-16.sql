@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.7.34)
-# Database: BonjoursDB
-# Generation Time: 2021-08-16 13:14:00 +0000
+# Database: bonjourdb
+# Generation Time: 2021-08-16 14:03:04 +0000
 # ************************************************************
 
 
@@ -40,41 +40,6 @@ VALUES
 	(1,1111);
 
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table visitors
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `visitors`;
-
-CREATE TABLE `visitors` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '',
-  `email` varchar(254) NOT NULL DEFAULT '',
-  `company` varchar(120) DEFAULT NULL,
-  `entry_time` int(11) NOT NULL,
-  `is_in` tinyint(1) DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `visitors` WRITE;
-/*!40000 ALTER TABLE `visitors` DISABLE KEYS */;
-
-INSERT INTO `visitors` (`id`, `name`, `email`, `company`, `entry_time`, `is_in`)
-VALUES
-	(1,'Lucy Ferrabee','lucy.test@hotmail.com','Microsoft',1629109360,1),
-	(2,'Fred Perry','fred123@gmail.com','Just Eat',1629109480,1),
-	(3,'Sonia Larson','larry@hotmail.com',NULL,1629109200,0),
-	(4,'Benedict Cumberbatch','benten@uber.com','Uber',1629109670,1),
-	(5,'Penny Lane','penny@lane.com','Lane Services Ltd.',1629109100,0),
-	(6,'Michael Michaelson','mkay@me.com',NULL,1629109381,0),
-	(7,'Jonny Begood','birdwatcher5376@gousto.com','Gousto',1629109427,1),
-	(8,'Samuel Smith','smithy@gmail.com',NULL,1629110400,1),
-	(9,'Janet Jackson','plainjane1999@hotmail.com',NULL,1629115000,0),
-	(10,'Sally Silly','sal@gmail.com','Silly Sally Ltd.',1629109361,1);
-
-/*!40000 ALTER TABLE `visitors` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

@@ -41,10 +41,12 @@ return function (ContainerBuilder $containerBuilder) {
         return $db;
     };
 
+
     $container['HomePageController'] = DI\factory(\App\Factories\Controllers\HomePageControllerFactory::class);
     $container['AddVisitorController'] = DI\factory(\App\Factories\Controllers\AddVisitorControllerFactory::class);
     $container['AdminPageController'] = DI\factory(\App\Factories\Controllers\AdminPageControllerFactory::class);
     $container['VisitorModel'] = DI\factory(\App\Factories\Models\VisitorModelFactory::class);
+
 
     $containerBuilder->addDefinitions($container);
 };

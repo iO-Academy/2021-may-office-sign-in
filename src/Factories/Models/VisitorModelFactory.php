@@ -9,7 +9,7 @@ class VisitorModelFactory
     public function __invoke($container): VisitorModel
     {
         $db = $container->get('db');
-        return $visitorModel = new VisitorModel($db);
+        return new VisitorModel($db);
     }
 
 }

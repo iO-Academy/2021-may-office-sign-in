@@ -24,7 +24,7 @@ class AddVisitorFormController extends Controller
             return $response->withheader('Location','/newVisitor?error=Invalid Name');
         } else {
             $this->model->addVisitor($visitor);
-            return $response->withheader('Location', '/');
+            return $response->withheader('Location', '/?welcome=' . $visitor['name']);
         }
     }
 }

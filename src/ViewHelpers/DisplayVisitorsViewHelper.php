@@ -8,6 +8,7 @@ class DisplayVisitorsViewHelper
 {
     public static function displayVisitors($visitors): string
     {
+        date_default_timezone_set('Europe/London');
         $output = '';
         foreach ($visitors as $visitor) {
 

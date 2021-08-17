@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php require 'partials/layout/header.phtml'; ?>
-
+<?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
 
 
 <?php require 'partials/layout/footer.phtml'; ?>

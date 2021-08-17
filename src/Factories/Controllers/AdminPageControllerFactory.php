@@ -11,8 +11,8 @@ class AdminPageControllerFactory
 
     public function __invoke(ContainerInterface $container): AdminPageController
     {
-        $renderer = $container->get('renderer');
         $model = $container->get('VisitorModel');
-        return new AdminPageController($renderer, $model);
+        $renderer = $container->get('renderer');
+        return new AdminPageController($model, $renderer);
     }
 }

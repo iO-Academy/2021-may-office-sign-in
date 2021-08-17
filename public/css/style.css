@@ -12,9 +12,20 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    border-bottom: grey solid 2px;
 }
 
 footer {
     border-top: grey solid 2px;
+}
+
+.admin_page {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
 }
 

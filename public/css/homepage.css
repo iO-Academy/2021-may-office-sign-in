@@ -1,0 +1,18 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.btn {
+    padding: 10%;
+    margin: 10px;
+    font-size: 100%;
+}

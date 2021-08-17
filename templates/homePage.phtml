@@ -17,9 +17,13 @@
     <span>Select Options</span>
 </div>
 <div class="btn-container">
-    <a class="btn btn-primary btn-lg" href="/newVisitor" role="button">Guest Login</a>
-    <a class="btn btn-primary btn-lg" href="/admin" role="button">Admin Login</a>
+    <a class="btn btn-primary btn-lg" href="/newVisitor" role="button">Sign In</a>
+    <button type="button" class="btn btn-primary btn-lg">Sign Out</button>
 </div>
+<div class="admin-container">
+    <a class="btn btn-secondary btn-lg active admin-btn" href="/admin" role="button">Admin Login</a>
+</div>
+
 
 <?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
 

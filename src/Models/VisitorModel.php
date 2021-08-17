@@ -6,6 +6,7 @@ class VisitorModel
 {
     private $db;
 
+
     /**
      * @param $db
      */
@@ -17,17 +18,16 @@ class VisitorModel
     public function addVisitor(array $visitor)
     {
         $query = $this->db->prepare(
-            "INSERT INTO `visitors` (
-                            `name`,
-                            `company`
-                          ) 
-                          VALUES (
-                            :name,
-                            :company
-);"
+            'INSERT INTO `visitors` (`name`, `company`, `entry_time`) VALUES (:name, :company, :entry_time);');
+        return $query->execute(
+            [':name' => $visitor['name'], ':company'=>$visitor['company'], ':entry_time'=>$_SERVER['REQUEST_TIME']]);
+    }
 
-        );
-        return $query->execute();
+    public function getVisitors()
+    {
+        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time`, `is_in` FROM `visitors`");
+        $query->execute();
+        return $query->fetchAll();
     }
 
 

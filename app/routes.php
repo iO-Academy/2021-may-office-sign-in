@@ -9,8 +9,9 @@ return function (App $app) {
     $app->get('/', 'HomePageController');
     $app->get('/admin', 'AdminPageController');
     $app->get('/newVisitor', 'AddVisitorController');
-    $app->get('/newVisitor/error','ErrorController' );
+
 
     $app->post('/newVisitor', 'AddVisitorFormController');
+    $app->post('/admin', 'AdminPageVisitorListController');
 
 };

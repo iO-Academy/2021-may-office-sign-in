@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <?php require 'partials/layout/head.phtml'; ?>
+    <link rel="stylesheet" href="css/homePage.css" type="text/css">
+
+
 </head>
 <body>
 <?php require 'partials/layout/header.phtml'; ?>
+
+<div class="header-container">
+    <div>Logo</div>
+    <div>Bonjours - Welcome - Witamy</div>
+</div>
+</div class="options-header">
+    <span>Select Options</span>
+</div>
+<div class="btn-container">
+    <a class="btn btn-primary btn-lg" href="/newVisitor" role="button">Guest Login</a>
+    <a class="btn btn-primary btn-lg" href="/admin" role="button">Admin Login</a>
+</div>
+
 <?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
 
 

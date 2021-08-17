@@ -20,9 +20,12 @@ class AddVisitorFormController extends Controller
     public function __invoke($request, $response, $args)
     {
         $visitor = $request->getParsedBody();
-        print_r($visitor);
-        //validation
-        $this->model->addVisitor($visitor);
-        return $response->withheader('Location','/');
+        var_dump($visitor);
+        if (count($visitor['name']) === 0 || !is_string($visitor['name'])) {
+            return $response->withheader('Location','/newVisitor/error');
+        } else {
+            $this->model->addVisitor($visitor);
+            return $response->withheader('Location', '/');
+        }
     }
 }

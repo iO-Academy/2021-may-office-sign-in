@@ -12,8 +12,10 @@
             <form method="post" action="/newVisitor">
                 <label for="name" >Name</label>
                 <input id="name" name="name" type="text">
+                <?php //name validation here ?>
                 <label for="company" >Company <span>(Optional)</span></label>
                 <input id="company" name="company" type="text">
+                <?php //company validation here ?>
                 <div class="btn-container">
                     <button class="btn btn-back" type="button" value="Back">Back</button>
                     <button class="btn btn-submit" type="submit" value="Submit">Submit</button>

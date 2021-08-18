@@ -51,6 +51,7 @@ return function (ContainerBuilder $containerBuilder) {
     $container['SignOutController'] = DI\factory(\App\Factories\Controllers\SignOutControllerFactory::class);
     $container['SignOutSearchController'] = DI\factory(\App\Factories\Controllers\SignOutSearchControllerFactory::class);
     $container['AdminPasscodeController'] = DI\factory(\App\Factories\Controllers\AdminPasscodeControllerFactory::class);
+    $container['SignOutVisitorController'] = DI\factory(\App\Factories\Controllers\SignOutVisitorControllerFactory::class);
     $container['LogoutController'] = (new \App\Controllers\LogoutController());
 
 

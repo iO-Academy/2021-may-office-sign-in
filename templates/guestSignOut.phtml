@@ -41,8 +41,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="/signout">
-                        <label for="signOut"></label>
+                    <form method="post" action="/signOut">
+                        <label for="hiddenInput"></label>
+                        <input id="hiddenInput" type="hidden" value="" name="name">
                         <p>Are you sure you want to sign out for <span id="signOutName"></span>?</p>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button id="submitSignOut" type="submit" class="btn btn-primary">Confirm</button>

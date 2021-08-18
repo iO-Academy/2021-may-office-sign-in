@@ -1,15 +1,9 @@
-const close = document.querySelectorAll('.closeSearch')
-
+const close = document.querySelector('.closeSearch')
 const model = document.querySelector('#signOutName')
+const input = document.querySelector('#hiddenInput')
 
-const submitButton = document.querySelector('#submitSignOut')
 
-close.forEach(element => {
-    element.addEventListener('click', (e) => {
-        model.textContent = e.target.dataset.name
-    })
-})
-
-submitButton.addEventListener('click', (e) => {
-    console.log(model.textContent);
+close.addEventListener('click', (e) => {
+    model.textContent = e.target.dataset.name;
+    input.value = close.dataset.name;
 })

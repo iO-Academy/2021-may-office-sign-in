@@ -17,5 +17,6 @@ return function (App $app) {
     $app->post('/admin', 'AdminPageVisitorListController');
     $app->post('/search', 'SignOutSearchController');
     $app->post('/password', 'AdminPasscodeController');
+    $app->post('/signOut', 'SignOutVisitorController');
 
 };

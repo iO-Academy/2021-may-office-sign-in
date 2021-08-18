@@ -30,5 +30,12 @@ class VisitorModel
         return $query->fetchAll();
     }
 
+    public function getVisitorByName(array $name)
+    {
+        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time` FROM `visitors` WHERE `name` = :name");
+        $query->execute([':name' => $name['name']]);
+        return $query->fetchAll();
+    }
+
 
 }

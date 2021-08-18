@@ -18,14 +18,15 @@
 </div>
 <div class="btn-container">
     <a class="btn btn-primary btn-lg" href="/newVisitor" role="button">Sign In</a>
-    <button type="button" class="btn btn-primary btn-lg">Sign Out</button>
+    <a class="btn btn-primary btn-lg" href="/guestSignOut">Sign Out</a>
 </div>
 <div class="admin-container">
     <a class="btn btn-secondary btn-lg active admin-btn" href="/admin" role="button">Admin Login</a>
 </div>
 
 
-<?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
+<?php
+if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
 
 
 <?php require 'partials/layout/footer.phtml'; ?>

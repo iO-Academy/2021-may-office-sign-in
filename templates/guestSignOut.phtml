@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php require 'partials/layout/head.phtml'; ?>
+</head>
+<body>
+    <?php require 'partials/layout/header.phtml'; ?>
+    <div>Search for your name below to sign out</div>
+
+    <form method="POST" action="/search">
+    <div class="input-group">
+        <input name="name" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+               aria-describedby="search-addon" />
+        <button type="submit" class="btn btn-outline-primary">search</button>
+    </div>
+    </form>
+
+    <?php
+    echo '<pre>';
+    var_dump($visitors);
+    echo '</pre>';
+
+    ?>
+    <?php require 'partials/layout/footer.phtml'; ?>
+</body>
+</html>

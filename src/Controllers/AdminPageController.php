@@ -21,7 +21,13 @@ class AdminPageController extends Controller
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $visitors = $this->model->getVisitors();
-        return $this->renderer->render($response, 'adminPage.phtml', ['visitors' => $visitors]);
+
+            if ($_SESSION['adminLogin'] === true) {
+                $visitors = $this->model->getVisitors();
+                return $this->renderer->render($response, 'adminPage.phtml', ['visitors' => $visitors]);
+            }
+            $_SESSION['adminLogin'] = false;
+            return $response->withHeader('Location', '/');
+
     }
 }

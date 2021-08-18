@@ -1,4 +1,4 @@
-.title {
+p.title {
     text-align: center;
     background-color: red;
 }
@@ -7,7 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: blue;
+    background-color: transparent;
     padding: 15px;
 }
 

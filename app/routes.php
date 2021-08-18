@@ -13,5 +13,6 @@ return function (App $app) {
 
     $app->post('/newVisitor', 'AddVisitorFormController');
     $app->post('/admin', 'AdminPageVisitorListController');
+    $app->post('/password', 'AdminPasscodeController');
 
 };

@@ -32,10 +32,14 @@ class VisitorModel
 
     public function getVisitorByName(array $name)
     {
-        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time` FROM `visitors` WHERE `name` = :name");
-        $query->execute([':name' => $name['name']]);
+        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time`, `id` FROM `visitors` WHERE `name` LIKE :name");
+        $query->execute([':name' => '%' . $name['name'] . '%']);
         return $query->fetchAll();
     }
 
+    public function signOutVisitor($name) {
+        $query = $this->db->prepare("UPDATE `visitors` SET `is_in` = 1, `exit_time` = :exit_time WHERE `name` = :name");
+        return $query->execute([':name' => $name, ':exit_time'=>$_SERVER['REQUEST_TIME']]);
+    }
 
 }

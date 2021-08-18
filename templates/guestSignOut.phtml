@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php require 'partials/layout/head.phtml'; ?>
+    <script defer src="js/signOutModal.js"></script>
 </head>
 <body>
     <?php require 'partials/layout/header.phtml'; ?>
@@ -21,13 +22,36 @@
         '<tr>
             <th>NAME:</th>
             <th>COMPANY:</th>
-            <th>DAY/TIME ENTERED:</th>' .
+            <th>DAY/TIME ENTERED:</th>
+            <th>SIGN OUT</th>' .
             \App\ViewHelpers\DisplayVisitorsViewHelper::displaySearchVisitors($visitors) .
     '</tr>
     </table>';
     };
 
     ?>
+    <!-- Modal -->
+    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign Out</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/signout">
+                        <label for="signOut"></label>
+                        <p>Are you sure you want to sign out for <span id="signOutName"></span>?</p>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="submitSignOut" type="submit" class="btn btn-primary">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <?php require 'partials/layout/footer.phtml'; ?>
 </body>
 </html>

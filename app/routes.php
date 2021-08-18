@@ -10,10 +10,12 @@ return function (App $app) {
     $app->get('/admin', 'AdminPageController');
     $app->get('/newVisitor', 'AddVisitorController');
     $app->get('/guestSignOut', 'SignOutController');
+    $app->get('/logout', 'LogoutController');
 
 
     $app->post('/newVisitor', 'AddVisitorFormController');
     $app->post('/admin', 'AdminPageVisitorListController');
     $app->post('/search', 'SignOutSearchController');
+    $app->post('/password', 'AdminPasscodeController');
 
 };

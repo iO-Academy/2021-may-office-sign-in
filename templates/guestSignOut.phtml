@@ -16,9 +16,16 @@
     </form>
 
     <?php
-    echo '<pre>';
-    var_dump($visitors);
-    echo '</pre>';
+    if (isset($visitors)) {
+        echo '<table>' .
+        '<tr>
+            <th>NAME:</th>
+            <th>COMPANY:</th>
+            <th>DAY/TIME ENTERED:</th>' .
+            \App\ViewHelpers\DisplayVisitorsViewHelper::displaySearchVisitors($visitors) .
+    '</tr>
+    </table>';
+    };
 
     ?>
     <?php require 'partials/layout/footer.phtml'; ?>

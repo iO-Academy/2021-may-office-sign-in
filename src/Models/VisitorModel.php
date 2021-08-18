@@ -25,7 +25,7 @@ class VisitorModel
 
     public function getVisitors()
     {
-        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time`, `is_in` FROM `visitors`");
+        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time`, `is_in` FROM `visitors` ORDER BY `is_in` DESC ");
         $query->execute();
         return $query->fetchAll();
     }

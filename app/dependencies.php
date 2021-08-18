@@ -46,9 +46,13 @@ return function (ContainerBuilder $containerBuilder) {
     $container['AddVisitorController'] = DI\factory(\App\Factories\Controllers\AddVisitorControllerFactory::class);
     $container['AdminPageController'] = DI\factory(\App\Factories\Controllers\AdminPageControllerFactory::class);
     $container['VisitorModel'] = DI\factory(\App\Factories\Models\VisitorModelFactory::class);
+    $container['AdminModel'] = DI\factory(\App\Factories\Models\AdminModelFactory::class);
     $container['AddVisitorFormController'] = DI\factory(\App\Factories\Controllers\AddVisitorFormControllerFactory::class);
     $container['SignOutController'] = DI\factory(\App\Factories\Controllers\SignOutControllerFactory::class);
     $container['SignOutSearchController'] = DI\factory(\App\Factories\Controllers\SignOutSearchControllerFactory::class);
+    $container['AdminPasscodeController'] = DI\factory(\App\Factories\Controllers\AdminPasscodeControllerFactory::class);
+    $container['LogoutController'] = (new \App\Controllers\LogoutController());
+
 
     $containerBuilder->addDefinitions($container);
 };

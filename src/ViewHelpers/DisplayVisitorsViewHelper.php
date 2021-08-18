@@ -27,4 +27,19 @@ class DisplayVisitorsViewHelper
         return $output;
     }
 
+    public static function displaySearchVisitors($visitors){
+        date_default_timezone_set('Europe/London');
+        $output = '';
+        foreach ($visitors as $visitor) {
+
+            $output .= '<tr>
+                <td>' . $visitor['name'] . '</td>
+                <td>' . $visitor['company'] . '</td>
+                <td>' . date('m/d/Y H:i:s', $visitor['entry_time']) . '</td>';
+        }
+            '</tr>';
+
+        return $output;
+    }
+
 }

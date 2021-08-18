@@ -30,7 +30,6 @@ class SignOutSearchController extends Controller
     {
         $name = $request->getParsedBody();
         $query = $this->model->getVisitorByName($name);
-        var_dump($query);
         $data['visitors'] = $query;
         return $this->renderer->render($response, 'guestSignOut.phtml', $data);
     }

@@ -9,16 +9,23 @@
 <body>
 <?php require 'partials/layout/header.phtml'; ?>
 
-<?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
-<div class="options-header">
-    <h1>Select Options</h1>
-</div>
-<div class="btn-container">
-    <a class="btn btn-primary btn-lg" href="/newVisitor" role="button">Guest Login</a>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adminModal">
+<div class="admin-container">
+    <button type="button" class="btn btn-secondary btn-lg active admin-btn" data-toggle="modal" data-target="#adminModal">
         Admin Login
     </button>
-<!--    <a class="btn btn-primary btn-lg" data-toggle="modal" href="/admin" role="button">Admin Login</a>-->
+    <?php if (isset($_GET['invalidPasscode'])){echo '<p class="admin-btn incorrect" > Passcode Incorrect</p>';} ?>
+</div>
+
+
+
+<div class="options-header">
+    <h1>Select Options</h1>
+    <?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
+</div>
+<div class="btn-container">
+    <a class="btn btn-lg btn-main" href="/newVisitor" role="button">Guest Login</a>
+    <a class="btn btn-lg btn-main" href="" role="button">Guest Logout</a>
+
 </div>
 
 
@@ -42,9 +49,8 @@
             </div>
         </div>
     </div>
+
 </div>
-
-
 
 <?php require 'partials/layout/footer.phtml'; ?>
 </body>

@@ -16,6 +16,19 @@
     border: black 1px solid;
 }
 
+.admin-btn {
+    font-size: 70%;
+    margin-top: 10px;
+}
+
+.admin-container {
+    float: right;
+}
+
+.incorrect {
+    color: red;
+}
+
 @media only screen and (max-width: 1023px) {
 
     .btn-container {

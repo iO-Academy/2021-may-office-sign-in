@@ -7,7 +7,7 @@ function createTimeout()
         window.location.href = '/logout'
     } ,300000)
 
-}
+}p
 
 document.querySelector('body').addEventListener('click', () => {
     clearTimeout(timeout);

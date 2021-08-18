@@ -17,8 +17,9 @@
     <a class="btn btn-lg btn-main" href="/newVisitor" role="button">Guest Login</a>
     <button type="button" class="btn btn-main" data-toggle="modal" data-target="#adminModal">
         Admin Login
+        <?php if (isset($_GET['invalidPasscode'])){echo '<p class="alert alert-danger" > Passcode Incorrect</p>';} ?>
     </button>
-<!--    <a class="btn btn-primary btn-lg" data-toggle="modal" href="/admin" role="button">Admin Login</a>-->
+
 </div>
 
 

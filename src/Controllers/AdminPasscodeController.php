@@ -29,7 +29,7 @@ class AdminPasscodeController extends Controller
             $_SESSION['timestamp'] = $_SERVER['REQUEST_TIME'];
             return $response->withheader('Location','/admin');
         }
-        return $response->withheader('Location','/');
+        return $response->withheader('Location','/?invalidPasscode');
 
     }
 

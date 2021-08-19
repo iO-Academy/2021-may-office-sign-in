@@ -11,10 +11,11 @@
     <form method="POST" action="/search">
     <div class="input-group">
         <input name="name" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-               aria-describedby="search-addon" />
+               aria-describedby="search-addon" required/>
         <button type="submit" class="btn btn-outline-primary">search</button>
     </div>
     </form>
+    <button class="btn btn-back" type="button" value="Back"><a href="/">Back</a></button>
 
     <?php
     if (isset($visitors)) {

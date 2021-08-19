@@ -6,7 +6,6 @@ class VisitorModel
 {
     private $db;
 
-
     /**
      * @param $db
      */

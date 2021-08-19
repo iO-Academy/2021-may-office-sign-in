@@ -3,19 +3,20 @@
 <head>
     <?php require 'partials/layout/head.phtml'; ?>
     <script defer src="js/signOutModal.js"></script>
+    <link href="css/guestSignOut.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <?php require 'partials/layout/header.phtml'; ?>
-    <div>Search for your name below to sign out</div>
+    <div class="search">Please search for your name below to sign out</div>
 
     <form method="POST" action="/search">
     <div class="input-group">
         <input name="name" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                aria-describedby="search-addon" required/>
-        <button type="submit" class="btn btn-outline-primary">search</button>
+        <button type="submit" class="btn btn-light search">Search</button>
     </div>
     </form>
-    <button class="btn btn-back" type="button" value="Back"><a href="/">Back</a></button>
+    <a href="/" class="btn btn-back" type="button" value="Back">Back</a>
 
     <?php
     if (isset($visitors)) {
@@ -46,8 +47,8 @@
                         <label for="hiddenInput"></label>
                         <input id="hiddenInput" type="hidden" value="" name="name">
                         <p>Are you sure you want to sign out for <span id="signOutName"></span>?</p>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button id="submitSignOut" type="submit" class="btn btn-primary">Confirm</button>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                        <button id="submitSignOut" type="submit" class="btn btn-light">Confirm</button>
                     </form>
                 </div>
             </div>

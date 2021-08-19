@@ -7,7 +7,7 @@
     <body>
         <?php require 'partials/layout/header.phtml'; ?>
         <div class="title">
-            <h2>Visitor Form</h2>
+            <h1>Visitor Form</h1>
         </div>
         <div class="form-container">
             <form method="post" action="/newVisitor">
@@ -17,7 +17,7 @@
                 <label for="company" >Company <span>(Optional)</span></label>
                 <input id="company" name="company" type="text">
                 <div class="btn-container">
-                    <button class="btn btn-back" type="button" value="Back"><a href="/">Back</a></button>
+                    <a  class="btn btn-back" href="/"type="button" value="Back">Back</a>
                     <button class="btn btn-submit" type="submit" value="Submit">Submit</button>
                 </div>
             </form>

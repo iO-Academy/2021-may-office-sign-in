@@ -18,8 +18,8 @@ class DisplayVisitorsViewHelper
                 if ($visitor['is_in']) {
                     $output .= '<td>&#x2705</td><td><button 
                          data-name="'. $visitor['name'] .
-                        '" type="button" class="signOutButtonAdmin btn btn-secondary
-                btn-lg active admin-btn" data-toggle="modal" data-target="#signOutModal">Sign Out</button></td>';}
+                        '" type="button" class="btn btn-primary
+                btn-lg" data-toggle="modal" data-target="#signOutModal">Sign Out</button></td>';}
                 else {
                     $output .= '<td>' . date('H:i:s', $visitor['exit_time']) . '</td>';}
                 '</tr>';

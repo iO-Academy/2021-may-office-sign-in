@@ -20,7 +20,7 @@
 
 <div class="options-header">
     <h1>Select Options</h1>
-    <?php if (isset($welcome)){echo '<p> Hello ' . $welcome . ', welcome to Bonjour!</p>';} ?>
+    <?php if (isset($welcome)){echo '<h2> Hello ' . ucfirst($welcome) . ', welcome to Bonjour!</h2>';} ?>
 </div>
 <div class="btn-container">
     <a class="btn btn-lg btn-main" href="/newVisitor" role="button">Guest Login</a>
@@ -33,7 +33,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Admin Sign In</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -42,8 +42,8 @@
                 <form method="post" action="/password">
                     <label for="adminPasscode"></label>
                     <input type="password" name="adminPasscode" id="adminPasscode">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-light">Confirm</button>
                 </form>
             </div>
         </div>

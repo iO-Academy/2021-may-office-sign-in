@@ -12,10 +12,10 @@ class DisplayVisitorsViewHelper
         $output = '';
         foreach ($visitors as $visitor) {
 
-            $output .= '<tr>
+            $output .= '<tr class="visitor-details" data-id ="' . $visitor['id'] . '" data-in = "' . $visitor['is_in'] . '">
                 <td>' . $visitor['name'] . '</td>
                 <td>' . $visitor['company'] . '</td>
-                <td>' . date('m/d/Y H:i:s', $visitor['entry_time']) . '</td>';
+                <td>' . date('d/m/Y H:i:s', $visitor['entry_time']) . '</td>';
                 if ($visitor['is_in']) {
                     $output .= '<td> &#x2705</td>';}
                 else {

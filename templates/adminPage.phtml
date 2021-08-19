@@ -4,12 +4,17 @@
 <head>
     <?php require 'partials/layout/head.phtml'; ?>
     <script defer src="js/adminPasscodeModal.js"></script>
+    <script defer src="js/adminPage.js"></script>
+    <link href="css/adminPage.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <?php require 'partials/layout/header.phtml'; ?>
 <main class="admin_page">
-    <div>
-        <button><a href="/logout"> LOG OUT</a></button>
+    <div class="buttons-container">
+        <a href="/logout"><button>LOG OUT</button></a>
+        <button id="visitorsIn"> Visitors Currently In</button>
+        <button id="visitorsOut"> Visitors History</button>
+        <button id="allVisitors"> All Visitors</button>
     </div>
 
     <div>
@@ -25,8 +30,13 @@
 
         </table>
     </div>
-</main>
 
+
+</main>
+<div>
+    <button class="hideElement" id="previous"> < </button>
+    <button id="next"> > </button>
+</div>
 <?php require 'partials/layout/footer.phtml'; ?>
 </body>
 

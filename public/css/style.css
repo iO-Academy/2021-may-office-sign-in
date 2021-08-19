@@ -1,8 +1,19 @@
 body {
-    background-image: url("/background.jpg");
+    background-image: url("/background2.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+h1, h2 {
+    margin: 2%;
 }
 
 .container {
@@ -13,6 +24,14 @@ header {
     display: flex;
     justify-content: space-between;
     border-bottom: grey solid 2px;
+    margin-bottom: 2%;
+}
+
+.btn-main {
+    padding: 10%;
+    margin: 10px;
+    border: #C0C0C0 1px solid;
+    font-size: 1.6rem;
 }
 
 footer {
@@ -32,11 +51,14 @@ th, td {
 a {
     text-decoration: none;
     color: black;
+
 }
 
-a:hover {
-    color: black;
+a:hover, button:hover {
+    border: black solid 1px;
     text-decoration:none;
     cursor:pointer;
 }
+
+
 

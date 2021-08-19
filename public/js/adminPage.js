@@ -36,10 +36,11 @@ document.querySelector('#visitorsIn').addEventListener('click', () => {
             row.classList.toggle("hideElement");
         }
     })
-    recalculatePagination()
+
     previous.classList.add('hideElement')
     next.classList.remove('hideElement')
     currentPage = 1
+    recalculatePagination()
 })
 
 document.querySelector('#visitorsOut').addEventListener('click', () => {

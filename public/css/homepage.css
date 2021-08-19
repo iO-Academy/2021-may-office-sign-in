@@ -1,16 +1,4 @@
-.btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20%;
-    margin-bottom: 20%;
-}
 
-.btn-main {
-    padding: 10%;
-    margin: 10px;
-    font-size: 100%;
-    border: #C0C0C0 1px solid;
-}
 
 .btn-main:hover {
     border: black 1px solid;

@@ -22,7 +22,7 @@ function recalculatePagination() {
             row.classList.add("hideRow")
         }
     })
-    if (document.querySelectorAll('.visitor-details:not(.hideElement)').length === rowsOnPage - 1) {
+    if (document.querySelectorAll('.visitor-details:not(.hideElement)').length < rowsOnPage - 1) {
         next.classList.add('hideElement')
     }
 

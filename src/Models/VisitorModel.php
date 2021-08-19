@@ -31,7 +31,7 @@ class VisitorModel
 
     public function getVisitorByName(array $name)
     {
-        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time`, `id` FROM `visitors` WHERE `name` LIKE :name");
+        $query = $this->db->prepare("SELECT `name`, `company`, `entry_time`, `id` FROM `visitors` WHERE `name` LIKE :name AND `is_in` = 1");
         $query->execute([':name' => '%' . $name['name'] . '%']);
         return $query->fetchAll();
     }

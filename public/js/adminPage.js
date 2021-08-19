@@ -1,6 +1,6 @@
 let rows =  document.querySelectorAll('.visitor-details')
 let currentPage = 1
-const rowsOnPage = 5
+const rowsOnPage = 15
 const next = document.querySelector('#next')
 const previous = document.querySelector('#previous')
 
@@ -22,7 +22,7 @@ function recalculatePagination() {
             row.classList.add("hideRow")
         }
     })
-    if (document.querySelectorAll('.visitor-details:not(.hideElement)').length < rowsOnPage - 1) {
+    if (document.querySelectorAll('.visitor-details:not(.hideElement)').length <= rowsOnPage) {
         next.classList.add('hideElement')
     }
 

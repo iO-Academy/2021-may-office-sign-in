@@ -1,23 +1,40 @@
+* {
+    font-family: 'STIX Two Text', serif;
+}
+
 body {
     background-image: url("/background2.jpg");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+    font-size: 1.5rem;
 }
 
 .btn-container {
     display: flex;
     justify-content: center;
-    margin-top: 20%;
-    margin-bottom: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 h1, h2 {
     margin: 2%;
 }
 
+.welcome {
+    margin: auto 10px;
+    text-align: center;
+    font-size: 2rem;
+    height: 50px;
+}
+
 .container {
     margin: 3%;
+}
+
+.main-logo {
+    width: 80%;
+    margin-bottom: 4%;
 }
 
 header {
@@ -31,11 +48,14 @@ header {
     padding: 10%;
     margin: 10px;
     border: #C0C0C0 1px solid;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 footer {
     border-top: grey solid 2px;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    color: #595959;
 }
 
 .admin_page {

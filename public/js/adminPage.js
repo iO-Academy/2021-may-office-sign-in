@@ -92,10 +92,9 @@ document.querySelector('#previous').addEventListener('click', () => {
     currentPage--
     if (currentPage === 1) {
         previous.classList.add('hideElement')
-    }
-    if (currentPage !== 1) {
         next.classList.remove('hideElement')
     }
+
 
 
     document.querySelectorAll('.visitor-details:not(.hideElement)').forEach((row, i) => {

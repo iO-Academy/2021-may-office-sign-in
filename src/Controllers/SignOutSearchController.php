@@ -29,8 +29,7 @@ class SignOutSearchController extends Controller
     public function __invoke(Request $request, Response $response, array $args)
     {
         $name = $request->getParsedBody();
-        $query = $this->model->getVisitorByName($name);
-        $data['visitors'] = $query;
+        $data['visitors'] = $this->model->getVisitorByName($name);
         return $this->renderer->render($response, 'guestSignOut.phtml', $data);
     }
 

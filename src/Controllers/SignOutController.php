@@ -13,12 +13,10 @@ use Slim\Views\PhpRenderer;
 class SignOutController extends Controller
 {
     private PhpRenderer $renderer;
-    private VisitorModel $model;
 
     public function __construct(VisitorModel $model, PhpRenderer $renderer)
     {
         $this->renderer = $renderer;
-        $this->model = $model;
     }
 
     public function __invoke(Request $request, Response $response, array $args)

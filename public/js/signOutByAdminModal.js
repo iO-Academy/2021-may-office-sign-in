@@ -13,12 +13,19 @@ close.forEach((element) => {
 })
 
 
+// signOutAll.addEventListener('click', (e) => {
+//     const visitorsIn = visitors.map(visitor => {
+//         if(visitor.dataset.in == 1) {
+//             return visitor.dataset.name
+//         }
+//         return visitorsIn;
+//     })
+//
+// })
+
 signOutAll.addEventListener('click', (e) => {
-    const visitorsIn = [];
-    visitors.forEach(visitor => {
-        if(visitor.dataset.in == 1) {
-            visitorsIn.push(visitor.dataset.name)
-        }
-    })
-    input2.value = visitorsIn;
+    sign
 })
+
+signOutAllVisitor
+

@@ -18,10 +18,7 @@ class SignOutAllVisitorsByAdminController extends Controller
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $names = $request->getParsedBody();
-        $name = explode(',',$names['name']);
-        $this->model->signOutAllVisitor($name);
+        $this->model->signOutAllVisitor();
         return $response->withHeader('Location', '/admin');
-
     }
 }

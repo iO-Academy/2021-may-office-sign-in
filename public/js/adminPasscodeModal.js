@@ -14,4 +14,14 @@ document.querySelector('body').addEventListener('click', () => {
     createTimeout()
 })
 
+document.querySelector('body').addEventListener('scroll', () => {
+    clearTimeout(timeout);
+    createTimeout()
+})
+
+document.querySelector('body').addEventListener('touch', () => {
+    clearTimeout(timeout);
+    createTimeout()
+})
+
 createTimeout()

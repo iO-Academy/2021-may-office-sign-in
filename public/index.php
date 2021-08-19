@@ -39,6 +39,7 @@ $middleware = require __DIR__ . '/../app/middleware.php';
 $middleware($app);
 
 session_start();
+date_default_timezone_set('Europe/London');
 
 // Register routes
 $routes = require __DIR__ . '/../app/routes.php';

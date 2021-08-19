@@ -19,8 +19,12 @@ class SignOutVisitorByAdminController extends Controller
     public function __invoke(Request $request, Response $response, array $args)
     {
         $name = $request->getParsedBody();
+        if (!isset($name)) {
+            return $response->withHeader('Location', '/admin?error=1');
+        } else {
         $this->model->signOutVisitor($name);
         return $response->withHeader('Location', '/admin');
+    }
 
     }
 }

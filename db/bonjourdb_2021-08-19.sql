@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.34)
 # Database: bonjourdb
-# Generation Time: 2021-08-19 08:30:25 +0000
+# Generation Time: 2021-08-19 14:25:04 +0000
 # ************************************************************
 
 
@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS `admin`;
 
 CREATE TABLE `admin` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `passcode` varchar(244) NOT NULL DEFAULT '',
+  `passcode` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,46 +40,6 @@ VALUES
 	(1,'$2y$10$8b6.n5NdQchnxb36imwwUe9LAcS7.OrKb6TQhXStzPAwIN66.t20S');
 
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table visitors
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `visitors`;
-
-CREATE TABLE `visitors` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '',
-  `email` varchar(254) NOT NULL DEFAULT '',
-  `company` varchar(120) DEFAULT NULL,
-  `entry_time` int(11) NOT NULL,
-  `exit_time` int(11) DEFAULT NULL,
-  `is_in` tinyint(1) DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `visitors` WRITE;
-/*!40000 ALTER TABLE `visitors` DISABLE KEYS */;
-
-INSERT INTO `visitors` (`id`, `name`, `email`, `company`, `entry_time`, `exit_time`, `is_in`)
-VALUES
-	(1,'Lucy Ferrabee','lucy.test@hotmail.com','Microsoft',1629109360,0,1),
-	(2,'Fred Perry','fred123@gmail.com','Just Eat',1629109480,0,1),
-	(3,'Sonia Larson','larry@hotmail.com',NULL,1629109200,0,1),
-	(4,'Benedict Cumberbatch','benten@uber.com','Uber',1629109670,0,1),
-	(5,'Penny Lane','penny@lane.com','Lane Services Ltd.',1629109100,0,1),
-	(6,'Michael Michaelson','mkay@me.com',NULL,1629109381,0,1),
-	(7,'Jonny Begood','birdwatcher5376@gousto.com','Gousto',1629109427,0,1),
-	(8,'Samuel Smith','smithy@gmail.com',NULL,1629110400,0,1),
-	(9,'Janet Jackson','plainjane1999@hotmail.com',NULL,1629115000,0,1),
-	(10,'Sally Silly','sal@gmail.com','Silly Sally Ltd.',1629109361,1629306306,0),
-	(25,'Alex','','',1629207595,1629306447,0),
-	(26,'flo ','','fla',1629360698,NULL,1),
-	(27,'lucy fox','','fox hound',1629360755,NULL,1),
-	(28,'lucy ford','','car',1629360763,1629360831,0);
-
-/*!40000 ALTER TABLE `visitors` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

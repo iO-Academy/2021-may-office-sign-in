@@ -8,7 +8,6 @@ class DisplayVisitorsViewHelper
 {
     public static function displayVisitors($visitors): string
     {
-        date_default_timezone_set('Europe/London');
         $count = 1;
         $output = '';
         foreach ($visitors as $visitor) {
@@ -30,7 +29,6 @@ class DisplayVisitorsViewHelper
     }
 
     public static function displaySearchVisitors($visitors){
-        date_default_timezone_set('Europe/London');
         $output = '';
         if (count($visitors) === 0) {
             $output .= '<div>No results found</div>';

@@ -2,14 +2,14 @@
 
 namespace App\Factories\Controllers;
 
-use App\Controllers\SignOutVisitorController;
+use App\Controllers\SignOutVisitorByAdminController;
 use Psr\Container\ContainerInterface;
 
-class SignOutVisitorControllerFactory
+class SignOutVisitorByAdminControllerFactory
 {
     public function __invoke(ContainerInterface $container)
     {
         $model = $container->get('VisitorModel');
-        return new SignOutVisitorController($model);
+        return new SignOutVisitorByAdminController($model);
     }
 }

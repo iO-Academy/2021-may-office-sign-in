@@ -11,19 +11,19 @@ class DisplayVisitorsViewHelper
         date_default_timezone_set('Europe/London');
         $output = '';
         foreach ($visitors as $visitor) {
-
             $output .= '<tr>
                 <td>' . $visitor['name'] . '</td>
                 <td>' . $visitor['company'] . '</td>
                 <td>' . date('m/d/Y H:i:s', $visitor['entry_time']) . '</td>';
                 if ($visitor['is_in']) {
-                    $output .= '<td> &#x2705</td>';}
+                    $output .= '<td>&#x2705</td><td><button 
+                         data-name="'. $visitor['name'] .
+                        '" type="button" class="signOutButtonAdmin btn btn-secondary
+                btn-lg active admin-btn" data-toggle="modal" data-target="#signOutModal">Sign Out</button></td>';}
                 else {
                     $output .= '<td> - </td>';}
-
                 '</tr>';
         }
-
         return $output;
     }
 
@@ -39,7 +39,7 @@ class DisplayVisitorsViewHelper
                 <td>' . $visitors[0]['name'] . '</td>
                 <td>' . $visitors[0]['company'] . '</td>
                 <td>' . date('m/d/Y H:i:s', $visitors[0]['entry_time']) . '</td>
-                <td><button data-name="'. $visitors[0]['name'] . '" class="closeSearch" type="button" class="btn btn-secondary
+                <td><button data-name="'. $visitors[0]['name'] . '" type="button" class="closeSearch btn btn-secondary
                 btn-lg active admin-btn" data-toggle="modal" data-target="#signOutModal">&#10008</button></td></tr>';
         }
         return $output;

@@ -7,7 +7,7 @@ use App\Models\VisitorModel;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class SignOutVisitorController extends Controller
+class SignOutVisitorByAdminController extends Controller
 {
     private VisitorModel $model;
 
@@ -20,7 +20,7 @@ class SignOutVisitorController extends Controller
     {
         $name = $request->getParsedBody();
         $this->model->signOutVisitor($name);
-        return $response->withHeader('Location', '/');
+        return $response->withHeader('Location', '/admin');
 
     }
 }

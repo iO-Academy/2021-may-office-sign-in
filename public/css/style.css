@@ -1,3 +1,7 @@
+* {
+    font-family: 'Patrick Hand', cursive;
+}
+
 body {
     background-image: url("/background.jpg");
     background-position: center; /* Center the image */
@@ -5,8 +9,19 @@ body {
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+.welcome {
+    margin: auto 10px;
+    text-align: center;
+    font-size: 2rem;
+    height: 50px;
+}
+
 .container {
     margin: 3%;
+}
+
+.main-logo {
+    width: 80%;
 }
 
 header {
@@ -17,6 +32,7 @@ header {
 
 footer {
     border-top: grey solid 2px;
+    font-size: 1.2rem;
 }
 
 .admin_page {

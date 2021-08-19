@@ -20,8 +20,7 @@ class DisplayVisitorsViewHelper
                 if ($visitor['is_in']) {
                     $output .= '<td> &#x2705</td>';}
                 else {
-                    $output .= '<td> - </td>';}
-
+                    $output .= '<td>' . date('H:i:s', $visitor['exit_time']) . '</td>';}
                 '</tr>';
                 $count++;
         }

@@ -64,8 +64,9 @@ return function (ContainerBuilder $containerBuilder) {
         DI\factory(\App\Factories\Controllers\SignOutVisitorControllerFactory::class);
     $container['SignOutVisitorByAdminController'] =
         DI\factory(\App\Factories\Controllers\SignOutVisitorByAdminControllerFactory::class);
+    $container['SignOutAllVisitorsByAdminController'] =
+        DI\factory(\App\Factories\Controllers\SignOutAllVisitorsByAdminControllerFactory::class);
     $container['LogoutController'] = (new \App\Controllers\LogoutController());
-
 
     $containerBuilder->addDefinitions($container);
 };

@@ -46,4 +46,13 @@ class VisitorModel
         return $query->execute([':name' => $name['name'], ':exit_time'=> $_SERVER['REQUEST_TIME']]);
     }
 
+    public function signOutAllVisitor(array $names) {
+        forEach($names as $name) {
+            $query = $this->db->prepare(
+                "UPDATE `visitors` SET `is_in` = 0, `exit_time` = :exit_time WHERE `name` = :name");
+             $result = $query->execute([':name' => $name, ':exit_time' => $_SERVER['REQUEST_TIME']]);
+        }
+        return $result;
+    }
+
 }

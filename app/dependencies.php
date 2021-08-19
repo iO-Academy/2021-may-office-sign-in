@@ -42,13 +42,28 @@ return function (ContainerBuilder $containerBuilder) {
     };
 
 
-    $container['HomePageController'] = DI\factory(\App\Factories\Controllers\HomePageControllerFactory::class);
-    $container['AddVisitorController'] = DI\factory(\App\Factories\Controllers\AddVisitorControllerFactory::class);
-    $container['AdminPageController'] = DI\factory(\App\Factories\Controllers\AdminPageControllerFactory::class);
-    $container['VisitorModel'] = DI\factory(\App\Factories\Models\VisitorModelFactory::class);
-    $container['AdminModel'] = DI\factory(\App\Factories\Models\AdminModelFactory::class);
-    $container['AddVisitorFormController'] = DI\factory(\App\Factories\Controllers\AddVisitorFormControllerFactory::class);
-    $container['AdminPasscodeController'] = DI\factory(\App\Factories\Controllers\AdminPasscodeControllerFactory::class);
+    $container['HomePageController'] =
+        DI\factory(\App\Factories\Controllers\HomePageControllerFactory::class);
+    $container['AddVisitorController'] =
+        DI\factory(\App\Factories\Controllers\AddVisitorControllerFactory::class);
+    $container['AdminPageController'] =
+        DI\factory(\App\Factories\Controllers\AdminPageControllerFactory::class);
+    $container['VisitorModel'] =
+        DI\factory(\App\Factories\Models\VisitorModelFactory::class);
+    $container['AdminModel'] =
+        DI\factory(\App\Factories\Models\AdminModelFactory::class);
+    $container['AddVisitorFormController'] =
+        DI\factory(\App\Factories\Controllers\AddVisitorFormControllerFactory::class);
+    $container['SignOutController'] =
+        DI\factory(\App\Factories\Controllers\SignOutControllerFactory::class);
+    $container['SignOutSearchController'] =
+        DI\factory(\App\Factories\Controllers\SignOutSearchControllerFactory::class);
+    $container['AdminPasscodeController'] =
+        DI\factory(\App\Factories\Controllers\AdminPasscodeControllerFactory::class);
+    $container['SignOutVisitorController'] =
+        DI\factory(\App\Factories\Controllers\SignOutVisitorControllerFactory::class);
+    $container['SignOutVisitorByAdminController'] =
+        DI\factory(\App\Factories\Controllers\SignOutVisitorByAdminControllerFactory::class);
     $container['LogoutController'] = (new \App\Controllers\LogoutController());
 
 

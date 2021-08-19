@@ -2,37 +2,36 @@
 <html lang="en">
 <head>
     <?php require 'partials/layout/head.phtml'; ?>
-    <script defer src="js/adminPasscodeModal.js"></script>
-    <script defer src="js/adminPage.js"></script>
-    <script defer src="js/signOutByAdminModal.js"></script>
-    <link href="css/adminPage.css" type="text/css" rel="stylesheet">
+    <script defer src="js/signOutModal.js"></script>
 </head>
 <body>
-<?php require 'partials/layout/header.phtml'; ?>
-<main class="admin_page">
-    <div class="buttons-container">
-        <a href="/logout"><button>LOG OUT</button></a>
-        <button id="visitorsIn"> Visitors Currently In</button>
-        <button id="visitorsOut"> Visitors History</button>
-        <button id="allVisitors"> All Visitors</button>
-    </div>
+    <?php require 'partials/layout/header.phtml'; ?>
+    <div>Search for your name below to sign out</div>
 
-    <div>
-        <table>
-        <tr>
+    <form method="POST" action="/search">
+    <div class="input-group">
+        <input name="name" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+               aria-describedby="search-addon" required/>
+        <button type="submit" class="btn btn-outline-primary">search</button>
+    </div>
+    </form>
+    <button class="btn btn-back" type="button" value="Back"><a href="/">Back</a></button>
+
+    <?php
+    if (isset($visitors)) {
+        echo '<table>' .
+        '<tr>
             <th>NAME:</th>
             <th>COMPANY:</th>
             <th>DAY/TIME ENTERED:</th>
-            <th>CURRENTLY IN/SIGN OUT TIME:</th>
-            <?php echo \App\ViewHelpers\DisplayVisitorsViewHelper::displayVisitors($visitors); ?>
-        </tr>
-        </table>
-    </div>
-</main>
-<!--modal-->
-<div>
-    <button class="hideElement" id="previous"> < </button>
-    <button id="next"> > </button>
+            <th>SIGN OUT</th>' .
+            \App\ViewHelpers\DisplayVisitorsViewHelper::displaySearchVisitors($visitors) .
+    '</tr>
+    </table>';
+    };
+
+    ?>
+    <!-- Modal -->
     <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -43,7 +42,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="/signOutByAdmin">
+                    <form method="post" action="/signOut">
                         <label for="hiddenInput"></label>
                         <input id="hiddenInput" type="hidden" value="" name="name">
                         <p>Are you sure you want to sign out for <span id="signOutName"></span>?</p>
@@ -55,5 +54,5 @@
         </div>
     </div>
     <?php require 'partials/layout/footer.phtml'; ?>
-    </body>
+</body>
 </html>

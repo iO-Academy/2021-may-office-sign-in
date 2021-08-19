@@ -22,11 +22,7 @@ class HomePageController extends Controller
     public function __invoke(Request $request, Response $response, array $args)
     {
         $welcome = $request->getQueryParams();
-        if (isset($welcome)) {
-            return $this->renderer->render($response, 'homePage.phtml', $welcome);
-        } else {
-            return $this->renderer->render($response, 'homePage.phtml', $args);
-        }
+        return $this->renderer->render($response, 'homePage.phtml', $welcome);
     }
 
 }

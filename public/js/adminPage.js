@@ -1,72 +1,87 @@
-
 let rows =  document.querySelectorAll('.visitor-details')
-
-
-let pages = Math.ceil(rows.length/5)
 let currentPage = 1
-
-let countRows = 0
-
+const rowsOnPage = 5
+const next = document.querySelector('#next')
+const previous = document.querySelector('#previous')
 
 rows.forEach((row) => {
-    if (parseInt(row.dataset.id) > 5) {
+    if (parseInt(row.dataset.id) > rowsOnPage) {
         row.classList.add("hideRow")
     }
-
 })
 
-rows.forEach((row) => {
-    if (row.style.display !== 'none' && row.className == 'hideRow') {
-        countRows++
-        console.log(countRows)
+function removeHideRow() {
+    rows.forEach((row) => {
+        row.classList.remove("hideRow")
+    })
+}
 
+function recalculatePagination() {
+    document.querySelectorAll('.visitor-details:not(.hideElement)').forEach((row, i) => {
+        if (i > rowsOnPage - 1) {
+            row.classList.add("hideRow")
+        }
+    })
+    if (document.querySelectorAll('.visitor-details:not(.hideElement)').length === rowsOnPage - 1) {
+        next.classList.add('hideElement')
     }
-})
 
-
-
+}
 
 document.querySelector('#visitorsIn').addEventListener('click', () => {
-    let countRows = 0
+    removeHideRow()
     rows.forEach((row) => {
         row.classList.remove("hideElement")
         if (row.dataset.in == 0 ) {
             row.classList.toggle("hideElement");
-            countRows++
-            console.log(countRows)
         }
-
     })
+    recalculatePagination()
+    previous.classList.add('hideElement')
+    next.classList.remove('hideElement')
+    currentPage = 1
 })
 
-document.querySelector('#visitorsOut').addEventListener('click', () =>
-{
+document.querySelector('#visitorsOut').addEventListener('click', () => {
+    removeHideRow()
     rows.forEach((row) => {
         row.classList.remove("hideElement")
         if (row.dataset.in == 1) {
             row.classList.toggle("hideElement");
         }
     })
+
+    previous.classList.add('hideElement')
+    next.classList.remove('hideElement')
+    currentPage = 1
+    recalculatePagination()
 })
 
 document.querySelector('#allVisitors').addEventListener('click', () => {
+    removeHideRow()
     rows.forEach((row) => {
         row.classList.remove("hideElement")
     })
+    previous.classList.add('hideElement')
+    next.classList.remove('hideElement')
+    currentPage = 1
+    recalculatePagination()
 })
-console.log(pages)
+
 document.querySelector('#next').addEventListener('click', () => {
+    const rowsVisible = document.querySelectorAll('.visitor-details:not(.hideElement)')
+    let rowsVisibleCount = rowsVisible.length
     currentPage++
     if (currentPage > 1) {
-        document.querySelector('#previous').classList.remove('hideElement')
+        previous.classList.remove('hideElement')
     }
-    if (currentPage === pages) {
-
-        document.querySelector('#next').classList.add('hideElement')
+    if (currentPage === Math.ceil(rowsVisibleCount/rowsOnPage) ) {
+        next.classList.add('hideElement')
     }
-    rows.forEach((row) => {
+    rowsVisible.forEach((row, i) => {
         row.classList.remove("hideRow")
-        if (parseInt(row.dataset.id) > currentPage * 5 || parseInt(row.dataset.id) <= (currentPage -1) * 5) {
+        i++
+        if (i > currentPage * rowsOnPage || i <= (currentPage -1) * rowsOnPage) {
             row.classList.add("hideRow")
         }
     })
@@ -75,18 +90,20 @@ document.querySelector('#next').addEventListener('click', () => {
 document.querySelector('#previous').addEventListener('click', () => {
     currentPage--
     if (currentPage === 1) {
-        document.querySelector('#previous').classList.add('hideElement')
+        previous.classList.add('hideElement')
     }
     if (currentPage !== 1) {
-        document.querySelector('#next').classList.remove('hideElement')
+        next.classList.remove('hideElement')
     }
 
 
-    rows.forEach((row) => {
+    document.querySelectorAll('.visitor-details:not(.hideElement)').forEach((row, i) => {
         row.classList.remove("hideRow")
-        if (parseInt(row.dataset.id) > currentPage * 5 || parseInt(row.dataset.id) <= (currentPage -1) * 5) {
+        i++
+        if (i > currentPage * rowsOnPage || i <= (currentPage -1) * rowsOnPage) {
             row.classList.add("hideRow")
         }
     })
 })
+
 
